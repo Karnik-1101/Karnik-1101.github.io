@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="demo">
+</div>
+<hr>
+<div>
+<h2>
+Task AJAX</h2>
+
+<button type="button" onclick="loadDoc()">Change Contact</button></div>
+
+<script>
+function loadDoc(){
+	var xhttp= new XMLHttpRequest();
+	xhttp.onreadystatechange=function(){
+		if(this.readyState==4 && this.status==200 ){
+			xmlDoc= xhttp.responseXML;
+			txt="";
+			x=xmlDoc.getElementsByTagName("ARTIST");
+			for(i=0;i<x.length;i++){
+				txt+=x[i].childNodes[0].nodeValue + "<br>";
+			}
+			document.getElementById("demo").innerHTML=txt;
+		}
+	};
+	xhttp.open("GET","catalog.xml",true);
+	xhttp.send();
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<p id="demo"></p>
+
+<script>
+var xhttp= new XMLHttpRequest();
+xhttp.onreadystatechange=function(){
+	if(this.readyState==4 && this.status==200){
+		showResult(xhttp.responseXML);
+	}
+};
+
+xhttp.open("GET","book.xml",true);
+xhttp.send();
+
+function showres(xml){
+	var txt="";
+	path="/bookstore/book/title";
+	var nodes= xml.evaluate(path,xml,null,XPathResult.ANY_TYPE,null);
+	var res= nodes.iterateNext();
+	while(res){
+		txt+=res.childNodes[0].nodeValue+"<br>";
+		res=nodes.iterateNext();
+	}
+}
+</script>
+</body>
+</html>

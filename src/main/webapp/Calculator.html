@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="Karnik">
+
+<meta name="viewport" content="device-width,initial-scale=1.0">
+
+<title>calculator</title>
+
+<style>
+
+
+#heading{
+ width:80px;
+ height:50px;
+ 
+ font-family:impact;
+ position:relative;
+ left:70px;
+ color:black;
+ text-shadow:2px 2px 5px;
+ user-select:none;
+ }
+
+#image{
+
+  border:3px sorgb(255, 128, 64)white;
+  border-radius:40px 15px 40px 15px;
+  box-shadow:10px 10px 10px 4px pink; 
+  transition:all 0.5s ease-out;
+}
+
+#image:hover{
+   
+   box-shadow:0px 0px 0px grey;
+   transform:translate(10px,10px); 
+  
+}
+
+#clear{
+ box-shadow:5px 5px 10px 5px ;
+ border:2px solid white;
+ transition:all 0.5s ease-in;
+ 
+}
+
+#clear:hover{
+box-radius:50px 50px 50px 50px;
+
+box-shadow: 0px 0px 0px white;
+transform: translate(5px,5px);
+
+}
+
+
+#check{
+
+ box-shadow:5px 5px 10px 5px;
+  border:2px solid ;
+  transition:all 0.5s ease-out;
+}
+
+#check:hover{
+border-radius:50px 50px 50px 50px;
+box-shadow: 0px 0px 0px grey;
+transform: translate(5px,5px);
+
+
+}
+
+#lbres{
+
+font-family:helvetica;
+font-Size:25px;
+}
+
+#result{
+font-weight:bold;
+font-family:helvetica;
+font-Size:20px;	
+width:200px;
+height:20px;
+border:3px solid ;
+
+}
+
+#firstField{
+
+font-size:25px;
+font-family:helvetica;
+}
+
+#secondField{
+
+font-size:25px;
+font-family:helvetica;
+}
+
+#thirdField{
+
+font-size:25px;
+font-family:helvetica;
+}
+
+#operat {
+
+font-size:25px;
+font-family:helvetica;
+}
+
+</style>
+
+
+
+<script>
+
+
+function ClearFields() {
+
+    document.getElementById("num1").value = "";
+    document.getElementById("num2").value = "";
+    document.getElementById("result").innerText = " ";
+}
+
+
+
+function calculate() {
+	
+	var a = parseInt(document.getElementById("num1").value);
+	var b = parseInt(document.getElementById("num2").value);
+	
+	var res = document.getElementById("result");
+	
+	
+	var operator = document.getElementById("operat").value;
+	
+	console.log(operator);
+	
+	if(operator == "add") {
+      
+		res.innerHTML = a + b;
+	}
+	
+	else if(operator == "sub") {
+		
+		res.innerHTML = a - b;
+	}
+	
+	else if(operator == "mul") {
+		
+		res.innerHTML = a * b;
+	}
+	
+	else if(operator == "div") {
+		
+		res.innerHTML = a / b;
+	}
+	
+}
+
+</script>
+
+
+</head>
+
+<body>
+
+  <h1 id="heading" >Calculator</h1>
+  
+ <marquee><font size="20">🚅🚃🚃🚃🚃🚃🚃🚃</font> <img id="image" src="Img\head.jpg.png" id="image" ></marquee>
+  
+  <br/>
+  <br/>
+  <hr></hr>
+  
+  
+  <table>
+  
+  <tr>
+  
+  <td><label id="firstField">Enter the first number:</label></td>
+  
+  <td><input type="number" id="num1"></td>
+  </tr>
+  
+  <tr>
+  
+  <td> <label id="secondField">Enter the second number:</label> </td>
+  
+  <td><input type="number" id="num2"></td>
+  
+  </tr>
+  
+  <tr>
+  
+  <td> <label id="thirdField">Select Operator:</label>  </td>
+  
+  <td> 
+  
+  <select name="operator" id="operat">
+  
+  
+  <option value="select">select...</option>
+  <option value="add" id="add">+</option>
+  <option value="sub" id="sub">-</option>
+  <option value="mul" id="mul">*</option>
+  <option value="div" id ="div">/</option>
+  
+  </select>
+  
+  </td>
+  
+  
+  </tr>
+  
+  <tr>
+  
+  <td>  <img id="clear"   src="Img/clear.png" width="90px" height="50px" onclick="ClearFields();"> </td>
+  <td>  <img id="check" src="Img/check.png" width="90px" height="50px" onclick="calculate();"> </td>
+   
+  
+  </tr>
+  
+  </table>
+  
+  <br>
+  <br>
+  
+  <label id="lbres">Result:</label>
+  <p id="result"> </p>
+ 
+</body>
+
+</html>

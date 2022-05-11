@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+<b>Name:</b><span id="name"></span><br>
+<b>Company:</b><span id="company"></span><br>
+<b>Age:</b><span id="age"></span>
+</div>
+
+
+<script>
+if(window.XMLHttpRequest){
+	xmlhttp= new XMLHttpRequest();// if our browser is any other but microsoft
+}
+else{
+	xmlhttp= new ActivateXObject("Microsoft.XMLHTTP")//for microsoft
+}
+xmlhttp.open("GET","address.xml",true);
+xmlhttp.send();
+xmldoc=xmlhttp.responseXML;
+var txt1=xmldoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+var txt2=xmldoc.getElementsByTagName("company")[0].childNodes[0].nodeValue;
+var txt3=xmldoc.getElementsByTagName("age")[0].childNodes[0].nodeValue;
+ document.getElementById("name").innerHTML=txt1;
+ document.getElementById("company").innerHTML=txt2;
+ document.getElementById("age").innerHTML=txt3;
+ 
+</script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Beans</name>
+	<name>Webdemo</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -28,4 +28,16 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/main/webapp/AJax-xml/address.xml</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Documents/address.xml</locationURI>
+		</link>
+		<link>
+			<name>src/main/webapp/book/books.xml</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Documents/books.xml</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>
